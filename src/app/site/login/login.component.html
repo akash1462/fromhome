@@ -1,0 +1,49 @@
+<div class="container mt-5 login-wrap">
+    <div class="row justify-content-center login-html">
+        <div class="card login-form">
+            <div class="card-body">
+                <h1>Login</h1>
+
+                <!-- Alerts for invalid details -->
+                <div class="alert alert-danger" *ngIf="this.invalidLogin ">Invalid
+                    Username / Password
+                </div>
+
+                <!-- Login Form-->
+                <form [formGroup]="loginForm" (submit)="onSubmit()">
+
+                    <!--<form [formGroup]="loginForm" (submit)="this.authService.authenticateUser(loginForm.value)">-->
+
+                    <!-- Username Details-->
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" class="form-control" placeholder="Enter Username" formControlName="username"
+                            id="username" required>
+                        <div class="text-danger"
+                            *ngIf="username.touched && username.invalid && username.errors.required">
+                            Username is required
+                        </div>
+                    </div>
+
+                    <!-- Password Credentials-->
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" placeholder="Enter Password"
+                            formControlName="password" id="password" required>
+                        <div class="text-danger"
+                            *ngIf="password.touched && password.invalid && password.errors.required">Password
+                            is required</div>
+                    </div>
+
+                    <!-- Submit Form-->
+                    <button type="submit" class="btn btn-custom">Login</button>
+
+                    <span class="float-right">
+                        New Here? <a (click)="toSignup()">Signup</a>
+                    </span>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

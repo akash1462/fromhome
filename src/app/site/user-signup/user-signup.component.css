@@ -1,0 +1,28 @@
+/* include stylesheet for SignUp*/
+body {
+	font-family: 'Encode Sans'
+}
+
+.space {
+	padding: 30px;
+}
+
+.btn-custom {
+	color: #fff;
+	background-color: #0394fc;
+	border-color:#0394fc;
+}
+
+
+.validation-text {
+	color: red;
+	font-size: 12px;
+}
+
+.material-icons{
+	
+	font-size: 50px;
+	margin-left: auto;
+	margin-right: auto;
+
+}

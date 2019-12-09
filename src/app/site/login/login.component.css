@@ -1,0 +1,57 @@
+/* include stylesheet for truYum */
+body {
+	font-family: 'Encode Sans'
+}
+
+
+.space {
+	padding: 30px;
+}
+
+.btn-custom {
+	color: #fff;
+	background-color: #0394fc;
+	border-color:#0394fc;
+}
+
+
+.validation-text {
+	color: red;
+	font-size: 12px;
+}
+
+
+body {
+	margin:0;
+	color:#edf3ff;
+	background:#c8c8c8;
+	background:url(https://hdqwalls.com/download/material-design-4k-2048x1152.jpg) fixed;
+	background-size: cover;
+	font:600 16px/18px 'Open Sans',sans-serif;
+}
+
+.login-wrap{
+	width: 100%;
+	margin:auto;
+	max-width:510px;
+	min-height:510px;
+	position:relative;
+	background:url(https://maxcdn.icons8.com/app/uploads/2016/03/material-1-1000x563.jpg) no-repeat center;
+	background-size: cover;
+	box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
+}
+.login-html{
+	width:100%;
+	height:100%;
+	position:absolute;
+	padding:90px 70px 50px 70px;
+	background:rgba(0,0,0,0.5);
+}
+.login-form{
+	min-height:345px;
+	position:relative;
+	-webkit-perspective:1000px;
+	        perspective:1000px;
+	-webkit-transform-style:preserve-3d;
+	        transform-style:preserve-3d;
+}

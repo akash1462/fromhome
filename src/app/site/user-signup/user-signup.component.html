@@ -1,0 +1,97 @@
+<div class="container">
+    <div class="row justify-content-center">
+
+        <div class="card mt-5">
+            <div class="card-body">
+
+                <form [formGroup]="signUpForm" (submit)="addUser()">
+                    <h1>User Signup</h1>
+                    <!--Alerts for invalid details-->
+                    <div class="alert-danger" *ngIf="!userCreated">
+                        {{this.error}}
+                    </div>
+
+                    <!--Username Details-->
+                    <div class="row form-group">
+                        <label for="userid">UserID</label>
+                        <input type="text" class="form-control" placeholder="Enter userid" formControlName="userid"
+                            id="userid">
+                        <div class="validation-text" *ngIf="userid.invalid && userid.errors.required && userid.touched">
+                            Username is required</div>
+                    </div>
+
+                    <!--First Name and Last Name Detailss-->
+                    <div class="row">
+                        <div class="form-group mr-5">
+                            <label for="firstname">First Name</label>
+                            <input type="text" class="form-control" placeholder="Enter First Name"
+                                formControlName="firstname" id="firstname">
+                            <div class="validation-text"
+                                *ngIf="firstname.invalid && firstname.errors.required && firstname.touched">First Name
+                                is required</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="lastname">Last Name</label>
+                            <input type="text" class="form-control" placeholder="Enter Last Name"
+                                formControlName="lastname" id="lastname">
+                            <div class="validation-text"
+                                *ngIf="lastname.invalid && lastname.errors.required && lastname.touched">Last Name is
+                                required</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group mr-5">
+                            <label for="contact">Contact</label>
+                            <input type="number" class="form-control" placeholder="Enter Contact Information"
+                                formControlName="contact" id="contact">
+                            <div class="validation-text"
+                                *ngIf="firstname.invalid && firstname.errors.required && firstname.touched">Contact
+                                Information
+                                is required</div>
+                        </div>
+                        <div class="form-group mr-auto">
+                            <label for="payment_gateway">Role</label>
+                            <select class="form-control" placeholder="Select Role" formControlName="role" id="role">
+                                <option value="">Select Role</option>
+                                <option value="User"> User </option>
+                                <option value="Mentor"> Mentor</option>
+                            </select>
+                            <div class="validation-text" *ngIf="role.invalid && role.errors.required && role.touched">
+                                Role
+                                is required</div>
+                        </div>
+                    </div>
+
+                    <!-- Password Details-->
+                    <div class="row">
+                        <div class="form-group mr-5">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" placeholder="Enter Password"
+                                formControlName="password" id="password">
+                            <div class="validation-text"
+                                *ngIf="password.invalid && password.errors.required && password.touched">Password is
+                                required</div>
+                        </div>
+                        <!--Confirm Password-->
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirm Password</label>
+                            <input type="password" class="form-control" placeholder="Enter Confirm Password"
+                                formControlName="confirmPassword" id="confirmPassword">
+                            <div class="validation-text"
+                                *ngIf="confirmPassword.invalid && confirmPassword.errors.required && confirmPassword.touched">
+                                Confirm the Password</div>
+                            <div class="validation-text" *ngIf="signUpForm.get('confirmPassword').hasError('nomatch')">
+                                Password and Confirm Password do not match</div>
+                        </div>
+                    </div>
+                    <!-- Signup Button submit form-->
+                    <div class="row">
+                        <button type="submit" class="btn btn-custom" [disabled]="!signUpForm.valid">Signup</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
